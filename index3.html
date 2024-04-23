@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Missing Number Finder</title>
+</head>
+<body>
+
+<h2>Missing Number Finder</h2>
+<p>Series of numbers: 11, 12, 14, 15, 16, 18, 19, 20</p>
+<button onclick="findMissingNumber()">Find Missing Number</button>
+<p id="result"></p>
+
+<script>
+function findMissingNumber() {
+    const series = [11, 12, 14, 15, 16, 18, 19, 20];
+    const n = series.length + 1; 
+    const totalSum = (n * (n + 1)) / 2; 
+    
+    let actualSum = 0;
+    for (let i = 0; i < series.length; i++) {
+        actualSum += series[i];
+    }
+
+    const missingNumber = totalSum - actualSum;
+
+    document.getElementById("result").textContent = `Missing Number: ${missingNumber}`;
+}
+</script>
+
+</body>
+</html>
